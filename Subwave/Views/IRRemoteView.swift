@@ -189,6 +189,21 @@ struct RemoteFace: View {
                 Spacer()
                 key("next")
             }
+            HStack(alignment: .center) {
+                key("menu", size: 48)
+                Spacer()
+                VStack(spacing: 6) {
+                    key("up", size: 48)
+                    HStack(spacing: 6) {
+                        key("left", size: 48)
+                        key("ok", size: 56, filled: true)
+                        key("right", size: 48)
+                    }
+                    key("down", size: 48)
+                }
+                Spacer()
+                key("back", size: 48)
+            }
             Divider().overlay(Theme.stroke)
             HStack {
                 key("eqMovie")

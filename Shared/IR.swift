@@ -105,6 +105,7 @@ enum IRGroup: String, CaseIterable, Identifiable {
     case levels = "Levels"
     case modes = "Sound modes"
     case features = "Features"
+    case navigation = "Menu and navigation"
     case setup = "Setup"
     var id: String { rawValue }
 }
@@ -155,6 +156,8 @@ enum IRKeys {
         .init(id: "dialogDown", label: "Dialogue down", symbol: "minus", group: .levels, nec: 0xE0),
         .init(id: "surroundUp", label: "Surround up", symbol: "plus", group: .levels, nec: 0x6D),
         .init(id: "surroundDown", label: "Surround down", symbol: "minus", group: .levels, nec: 0x6C),
+        .init(id: "heightUp", label: "Height up", symbol: "arrow.up.to.line", group: .levels, nec: nil),
+        .init(id: "heightDown", label: "Height down", symbol: "arrow.down.to.line", group: .levels, nec: nil),
 
         .init(id: "eq", label: "Sound mode (cycle)", symbol: "slider.horizontal.3", group: .modes, nec: nil),
         .init(id: "eqMusic", label: "Music", symbol: "music.note", group: .modes, nec: 0x66),
@@ -171,8 +174,15 @@ enum IRKeys {
         .init(id: "surroundOn", label: "Surround on", symbol: "hifispeaker.2.fill", group: .features, nec: 0x23),
         .init(id: "surroundOff", label: "Surround off", symbol: "hifispeaker.2", group: .features, nec: 0x24),
 
+        .init(id: "up", label: "Up", symbol: "chevron.up", group: .navigation, nec: nil),
+        .init(id: "down", label: "Down", symbol: "chevron.down", group: .navigation, nec: nil),
+        .init(id: "left", label: "Left", symbol: "chevron.left", group: .navigation, nec: nil),
+        .init(id: "right", label: "Right", symbol: "chevron.right", group: .navigation, nec: nil),
+        .init(id: "ok", label: "OK", symbol: "circle.circle", group: .navigation, nec: nil),
+        .init(id: "back", label: "Back", symbol: "arrow.uturn.backward", group: .navigation, nec: nil),
+
         .init(id: "btPair", label: "Bluetooth pairing", symbol: "personalhotspot", group: .setup, nec: 0x6F),
-        .init(id: "menu", label: "Menu", symbol: "line.3.horizontal", group: .setup, nec: nil),
+        .init(id: "menu", label: "Menu", symbol: "line.3.horizontal", group: .navigation, nec: nil),
         .init(id: "info", label: "Info", symbol: "info.circle", group: .setup, nec: 0x1B),
         .init(id: "avDelayUp", label: "AV delay up", symbol: "plus", group: .setup, nec: 0xD6),
         .init(id: "avDelayDown", label: "AV delay down", symbol: "minus", group: .setup, nec: 0x71),

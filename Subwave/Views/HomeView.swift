@@ -1,6 +1,26 @@
 import SwiftUI
 import AVKit
 
+/// Two pages: the bar, and the remote with every button.
+struct RootView: View {
+    @EnvironmentObject var store: Store
+    @State private var tab = 0
+
+    var body: some View {
+        TabView(selection: $tab) {
+            HomeView()
+                .tabItem { Label("Sound bar", systemImage: "hifispeaker.fill") }
+                .tag(0)
+            NavigationStack { IRRemoteView() }
+                .tabItem { Label("Remote", systemImage: "av.remote.fill") }
+                .tag(1)
+        }
+        .sheet(item: Binding(get: { store.learning }, set: { if $0 == nil { store.endLearn() } })) { _ in
+            LearnSheet().environmentObject(store).presentationDetents([.medium])
+        }
+    }
+}
+
 struct HomeView: View {
     @EnvironmentObject var store: Store
     @ObservedObject private var cast = Store.shared.cast
@@ -39,9 +59,6 @@ struct HomeView: View {
             .sheet(isPresented: $showSetup) { SetupView().environmentObject(store) }
             .sheet(isPresented: $showSettings) { SettingsView().environmentObject(store) }
             .sheet(item: $editing) { p in PresetEditor(preset: p).environmentObject(store) }
-            .sheet(item: Binding(get: { store.learning }, set: { if $0 == nil { store.endLearn() } })) { _ in
-                LearnSheet().environmentObject(store).presentationDetents([.medium])
-            }
         }
     }
 
@@ -76,15 +93,6 @@ struct HomeView: View {
                 }
             }
             Spacer()
-            if store.isSetUp {
-                NavigationLink { IRRemoteView() } label: {
-                    Image(systemName: "av.remote.fill")
-                        .font(.system(size: 18, weight: .semibold))
-                        .frame(width: 42, height: 42)
-                        .background(Theme.card, in: Circle())
-                        .foregroundStyle(.white)
-                }
-            }
             Button { showSettings = true } label: {
                 Image(systemName: "gearshape.fill")
                     .font(.system(size: 18, weight: .semibold))
@@ -309,8 +317,6 @@ struct HomeView: View {
 
     private var moreCard: some View {
         VStack(spacing: 0) {
-            NavigationLink { IRRemoteView() } label: { row("Remote", "av.remote.fill", "Laid out like the Vizio remote, plus every button") }
-            Divider().overlay(Theme.stroke)
             NavigationLink { MenuBrowserView(path: SmartCast.settingsRoot, title: "Bar settings") } label: {
                 row("Bar settings", "list.bullet.indent", "Everything the bar exposes over Wi-Fi")
             }

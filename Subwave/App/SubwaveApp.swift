@@ -15,7 +15,7 @@ struct SubwaveApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            RootView()
                 .environmentObject(store)
                 .preferredColorScheme(.dark)
                 .tint(Theme.accent)

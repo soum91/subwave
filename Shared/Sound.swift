@@ -42,6 +42,8 @@ enum SoundMenu {
         case "dialogDown": return Feature(match: ["dialog", "dialogue", "speech"], avoid: [], op: .step(-1))
         case "surroundUp": return Feature(match: ["surround"], avoid: [], op: .step(1))
         case "surroundDown": return Feature(match: ["surround"], avoid: [], op: .step(-1))
+        case "heightUp": return Feature(match: ["height"], avoid: [], op: .step(1))
+        case "heightDown": return Feature(match: ["height"], avoid: [], op: .step(-1))
         case "avDelayUp": return Feature(match: ["delay", "lip sync"], avoid: [], op: .step(1))
         case "avDelayDown": return Feature(match: ["delay", "lip sync"], avoid: [], op: .step(-1))
         default: return nil
