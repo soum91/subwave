@@ -1,0 +1,41 @@
+{
+  "name": "Subwave by soum91",
+  "identifier": "io.github.soum91.subwave",
+  "subtitle": "Vizio sound bar, minus the Vizio app",
+  "description": "Controls a Vizio sound bar straight over Wi-Fi (SmartCast) with the Tuya IR blaster as fallback: power, volume, inputs, every sound setting, presets, Google Cast now playing, Bluetooth, widgets, Control Center, Siri, and bar-off-with-the-TV on the Afterglow bridge.",
+  "iconURL": "https://raw.githubusercontent.com/soum91/subwave/main/Subwave/Assets.xcassets/AppIcon.appiconset/icon.png",
+  "website": "https://github.com/soum91/subwave",
+  "sourceURL": "https://raw.githubusercontent.com/soum91/subwave/source/source.json",
+  "tintColor": "52D6DB",
+  "apps": [
+    {
+      "name": "Subwave",
+      "bundleIdentifier": "com.soum91.subwave",
+      "developerName": "soum91",
+      "subtitle": "Vizio sound bar, minus the Vizio app",
+      "localizedDescription": "Controls a Vizio sound bar straight over Wi-Fi (SmartCast) with the Tuya IR blaster as fallback: power, volume, inputs, every sound setting, presets, Google Cast now playing, Bluetooth, widgets, Control Center, Siri, and bar-off-with-the-TV on the Afterglow bridge.",
+      "iconURL": "https://raw.githubusercontent.com/soum91/subwave/main/Subwave/Assets.xcassets/AppIcon.appiconset/icon.png",
+      "tintColor": "52D6DB",
+      "category": "utilities",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.0.0.3",
+          "buildVersion": "3",
+          "date": "2026-10-21T04:18:04Z",
+          "localizedDescription": "- Fix intent dialog type (7272016)\n- Remote as its own tab with every button, D-pad and height keys (3c89a3a)\n- Subwave: Vizio sound bar app over SmartCast with Tuya IR fallback (4e08e68)",
+          "downloadURL": "https://github.com/soum91/subwave/releases/download/build-3/Subwave-1.0.0-build-3.ipa",
+          "size": 1564007,
+          "minOSVersion": "18.0"
+        }
+      ],
+      "version": "1.0.0.3",
+      "versionDate": "2026-10-21T04:18:04Z",
+      "versionDescription": "- Fix intent dialog type (7272016)\n- Remote as its own tab with every button, D-pad and height keys (3c89a3a)\n- Subwave: Vizio sound bar app over SmartCast with Tuya IR fallback (4e08e68)",
+      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-3/Subwave-1.0.0-build-3.ipa",
+      "size": 1564007,
+      "appPermissions": {}
+    }
+  ],
+  "news": []
+}
