@@ -112,7 +112,7 @@ struct SoundBarPowerIntent: AppIntent {
         try await Bar.perform(.power(on))
         reload()
         if !on { Donate.off() }
-        return .result(dialog: on ? "Sound bar on." : "Sound bar off.")
+        return .result(dialog: IntentDialog(stringLiteral: on ? "Sound bar on." : "Sound bar off."))
     }
 }
 
