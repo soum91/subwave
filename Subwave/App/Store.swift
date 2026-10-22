@@ -40,6 +40,8 @@ final class Store: ObservableObject {
     @Published var bar = BarConfig.stored { didSet { if bar != oldValue { BarConfig.stored = bar } } }
     @Published var state = BarState.stored
     @Published var inputs: [SCItem] = []
+    /// The bar's sound settings, so the home screen shows real choices (Surround: On / Off / Dual).
+    @Published var soundItems: [SCItem] = []
     @Published var wifiReachable: Bool?
     @Published var lastPath: BarPath?
     @Published var volumeDraft: Double?
@@ -123,6 +125,7 @@ final class Store: ObservableObject {
                 inputs = list
                 InputCache.save(list.map { CachedInput(name: $0.name, label: Self.inputLabel($0)) })
             }
+            if let items = try? await SoundMenu.audioItems(sc), !items.isEmpty { soundItems = items }
         }
         if full, tv.isSet { tvOn = await TV.isOn(tv) }
     }
@@ -155,6 +158,21 @@ final class Store: ObservableObject {
                 if case .power(let on) = a, on == false { Donate.off() }
             } catch {
                 show(error.localizedDescription)
+            }
+        }
+    }
+
+    func setSound(_ it: SCItem, _ value: String) {
+        guard let sc = SmartCast(bar) else { return }
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        if let i = soundItems.firstIndex(where: { $0.id == it.id }) { soundItems[i].value = .string(value) }
+        Task {
+            do {
+                try await sc.set(it.path, value)
+                lastPath = .wifi
+            } catch {
+                show(error.localizedDescription)
+                if let items = try? await SoundMenu.audioItems(sc) { soundItems = items }
             }
         }
     }

@@ -30,6 +30,7 @@ enum SoundMenu {
         case "vxOff": return Feature(match: ["virtual"], avoid: [], op: .toggle(false))
         case "surroundOn": return Feature(match: ["surround"], avoid: ["level", "volume"], op: .toggle(true))
         case "surroundOff": return Feature(match: ["surround"], avoid: ["level", "volume"], op: .toggle(false))
+        case "surroundDual": return Feature(match: ["surround"], avoid: ["level", "volume"], op: .choose(["dual"]))
         case "bassUp": return Feature(match: ["bass"], avoid: [], op: .step(1))
         case "bassDown": return Feature(match: ["bass"], avoid: [], op: .step(-1))
         case "trebleUp": return Feature(match: ["treble"], avoid: [], op: .step(1))
@@ -73,7 +74,10 @@ enum SoundMenu {
             guard f.match.contains(where: { n.contains($0) }), !f.avoid.contains(where: { n.contains($0) }) else { return false }
             switch f.op {
             case .choose(let words): return it.choices.contains { c in words.contains { c.lowercased().contains($0) } }
-            case .toggle: return it.isToggle
+            case .toggle:
+                // Some settings have more than on/off (Surround Sound: On / Off / Dual).
+                let c = Set(it.choices.map { $0.lowercased() })
+                return (it.kind == .list || it.kind == .xlist) && c.contains("on") && c.contains("off")
             case .step: return it.kind == .slider || it.kind == .value
             }
         }
@@ -82,6 +86,16 @@ enum SoundMenu {
             if let it = items.first(where: { fits($0) && ($0.name + " " + $0.cname).lowercased().contains(w) && !$0.readOnly }) { return it }
         }
         return nil
+    }
+
+    /// The bar's own list setting behind an on/off feature button, with every choice it really has.
+    static func listItem(for key: String, in items: [SCItem]) -> SCItem? {
+        guard let f = feature(key) else { return nil }
+        return items.first { it in
+            let n = (it.name + " " + it.cname).lowercased()
+            return (it.kind == .list || it.kind == .xlist) && it.choices.count >= 2 && !it.readOnly && !it.hidden
+                && f.match.contains(where: { n.contains($0) }) && !f.avoid.contains(where: { n.contains($0) })
+        }
     }
 
     /// Runs a feature button over Wi-Fi. Throws if the bar has no matching setting.

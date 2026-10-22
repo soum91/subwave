@@ -133,7 +133,7 @@ struct PresetEditor: View {
     private static let icons = ["sparkles", "tv", "film", "music.note", "gamecontroller", "moon.stars.fill", "sun.max.fill",
                                 "headphones", "mic.fill", "sportscourt.fill", "party.popper.fill", "bed.double.fill", "power"]
     private static let featureKeys = ["eqMovie", "eqMusic", "eqGame", "eqDirect", "nightOn", "nightOff", "truVolOn", "truVolOff",
-                                      "vxOn", "vxOff", "surroundOn", "surroundOff", "dialogUp", "dialogDown", "bassUp", "bassDown"]
+                                      "vxOn", "vxOff", "surroundOn", "surroundOff", "surroundDual", "dialogUp", "dialogDown", "bassUp", "bassDown"]
 
     var body: some View {
         NavigationStack {

@@ -176,6 +176,7 @@ enum IRKeys {
         .init(id: "vxOff", label: "Virtual:X off", symbol: "cube", group: .features, nec: 0xA3),
         .init(id: "surroundOn", label: "Surround on", symbol: "hifispeaker.2.fill", group: .features, nec: 0x23),
         .init(id: "surroundOff", label: "Surround off", symbol: "hifispeaker.2", group: .features, nec: 0x24),
+        .init(id: "surroundDual", label: "Dual surround", symbol: "hifispeaker.and.homepodmini.fill", group: .features, nec: nil),
 
         .init(id: "up", label: "Up", symbol: "chevron.up", group: .navigation, nec: nil),
         .init(id: "down", label: "Down", symbol: "chevron.down", group: .navigation, nec: nil),

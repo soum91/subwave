@@ -284,17 +284,31 @@ struct HomeView: View {
     }
 
     private func pairToggle(_ label: String, on: String, off: String, symbol: String) -> some View {
-        Menu {
-            Button { store.perform(.irKey(on)) } label: { Label("\(label) on", systemImage: symbol) }
-            Button { store.perform(.irKey(off)) } label: { Label("\(label) off", systemImage: "xmark") }
+        let item = store.bar.route == .ir ? nil : SoundMenu.listItem(for: on, in: store.soundItems)
+        let current = item?.stringValue
+        let active = current.map { $0.lowercased() != "off" } ?? false
+        return Menu {
+            if let item {
+                // The bar's real choices, so nothing gets flattened to plain on/off.
+                ForEach(item.choices, id: \.self) { c in
+                    Button { store.setSound(item, c) } label: {
+                        if c == current { Label(c, systemImage: "checkmark") } else { Text(c) }
+                    }
+                }
+            } else {
+                Button { store.perform(.irKey(on)) } label: { Label("\(label) on", systemImage: symbol) }
+                Button { store.perform(.irKey(off)) } label: { Label("\(label) off", systemImage: "xmark") }
+            }
         } label: {
             VStack(spacing: 6) {
                 Image(systemName: symbol)
                     .font(.system(size: 17, weight: .semibold))
                     .frame(width: 52, height: 52)
-                    .background(Color.white.opacity(0.08), in: Circle())
+                    .background(active ? Theme.accent : Color.white.opacity(0.08), in: Circle())
+                    .foregroundStyle(active ? .black : .white)
                     .overlay(Circle().stroke(Theme.stroke))
-                Text(label).font(.system(size: 11, weight: .medium)).foregroundStyle(.white.opacity(0.7)).lineLimit(1).minimumScaleFactor(0.7)
+                Text(current.map { "\(label): \($0)" } ?? label)
+                    .font(.system(size: 11, weight: .medium)).foregroundStyle(.white.opacity(0.7)).lineLimit(1).minimumScaleFactor(0.6)
             }
             .foregroundStyle(.white)
         }
