@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.6",
+          "buildVersion": "6",
+          "date": "2026-10-22T17:59:55Z",
+          "localizedDescription": "- iPhone volume buttons control the sound bar while Subwave is open (0794e37)\n- Sound buttons use the bar's real choices (keeps Dual surround) (b83f806)",
+          "downloadURL": "https://github.com/soum91/subwave/releases/download/build-6/Subwave-1.0.0-build-6.ipa",
+          "size": 1611720,
+          "minOSVersion": "18.0"
+        },
+        {
           "version": "1.0.0.5",
           "buildVersion": "5",
           "date": "2026-10-22T17:58:14Z",
@@ -47,11 +56,11 @@
           "minOSVersion": "18.0"
         }
       ],
-      "version": "1.0.0.5",
-      "versionDate": "2026-10-22T17:58:14Z",
-      "versionDescription": "- Sound buttons use the bar's real choices (keeps Dual surround) (b83f806)",
-      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-5/Subwave-1.0.0-build-5.ipa",
-      "size": 1598520,
+      "version": "1.0.0.6",
+      "versionDate": "2026-10-22T17:59:55Z",
+      "versionDescription": "- iPhone volume buttons control the sound bar while Subwave is open (0794e37)\n- Sound buttons use the bar's real choices (keeps Dual surround) (b83f806)",
+      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-6/Subwave-1.0.0-build-6.ipa",
+      "size": 1611720,
       "appPermissions": {}
     }
   ],
