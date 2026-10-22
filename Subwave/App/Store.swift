@@ -73,6 +73,36 @@ final class Store: ObservableObject {
 
     @Published var toast: String?
 
+    @Published var phoneVolumeButtons = (UserDefaults.standard.object(forKey: "phoneVolumeButtons") as? Bool) ?? true {
+        didSet {
+            UserDefaults.standard.set(phoneVolumeButtons, forKey: "phoneVolumeButtons")
+            updateVolumeButtons(active: phoneVolumeButtons)
+        }
+    }
+
+    /// Side buttons drive the bar while Subwave is in front. Not when the bar is known to be off, and not when
+    /// this phone is playing through the bar over Bluetooth (the buttons already set the bar's volume then).
+    func updateVolumeButtons(active: Bool) {
+        let vb = VolumeButtons.shared
+        guard active, phoneVolumeButtons, isSetUp else { vb.stop(); return }
+        vb.shouldIntercept = { [weak self] in
+            guard let self else { return false }
+            return self.state.power != false && !self.phoneOnBar
+        }
+        vb.onStep = { [weak self] n in
+            guard let self else { return }
+            Task { @MainActor in
+                do {
+                    try await Bar.perform(n > 0 ? .volumeUp(n) : .volumeDown(-n), cfg: self.bar)
+                    self.state = BarState.stored
+                } catch {
+                    self.show(error.localizedDescription)
+                }
+            }
+        }
+        vb.start()
+    }
+
     let cast = CastClient()
     private var poller: Task<Void, Never>?
     private var toastTask: Task<Void, Never>?

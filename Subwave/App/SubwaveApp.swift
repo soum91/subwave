@@ -16,6 +16,7 @@ struct SubwaveApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .background(VolumeHUDHider().frame(width: 1, height: 1).opacity(0.01))
                 .environmentObject(store)
                 .preferredColorScheme(.dark)
                 .tint(Theme.accent)
@@ -25,11 +26,15 @@ struct SubwaveApp: App {
             case .active:
                 store.startPolling()
                 if store.blaster.isReady, !store.blasterState.isConnected { store.connectBlaster() }
+                store.updateVolumeButtons(active: true)
                 Task {
                     await BridgeSync.pushIfChanged()
                     await store.refreshBridge()
                 }
+            case .inactive:
+                store.updateVolumeButtons(active: false)
             case .background:
+                store.updateVolumeButtons(active: false)
                 store.stopPolling()
                 Task { await IRSender.shared.drop() }
                 Self.scheduleRefresh()

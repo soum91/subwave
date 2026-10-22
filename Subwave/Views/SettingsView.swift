@@ -58,6 +58,12 @@ struct SettingsView: View {
                         Text("Same as Afterglow. On the TV: Network › Home network › IP control › Authentication \"Normal and Pre-Shared Key\".")
                     }
 
+                    Section {
+                        Toggle("iPhone volume buttons control the bar", isOn: $store.phoneVolumeButtons).tint(Theme.accent)
+                    } footer: {
+                        Text("While Subwave is open, the side buttons turn the sound bar up and down instead of the phone. Your phone's own volume is put back when you leave.")
+                    }
+
                     Section("Automation") {
                         NavigationLink { BridgeView() } label: {
                             LabeledContent("Follow the TV", value: store.bridge.isPaired ? "On the bridge" : "Not set")

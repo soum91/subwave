@@ -12,6 +12,7 @@ An iOS app for a Vizio sound bar that replaces the Vizio app. It talks to the ba
 - **Google Cast now playing.** When something is casting to the bar: title, artist, artwork, play/pause, skip, seek, and stop casting.
 - **Bluetooth.** Switch to BT, put the bar in pairing mode, pick the bar as this phone's audio output (route picker), and see whether the phone is connected to it.
 - **Remote** laid out like the Vizio one (power, volume and bass rockers, mute, transport, sound modes, inputs), then every Vizio sound bar button (built-in NEC codes from the SB3651 / V-series remotes), learn mode to record any button from your real remote, and import of Redshift's learned sound bar buttons.
+- **iPhone volume buttons** turn the bar up and down while Subwave is open (Settings to turn off). Not when the bar is off, or when the phone is already playing through it over Bluetooth.
 - **Widgets**: small (volume, power, +/-, mute), medium (plus 4 presets), large (a full remote: volume rocker, mute, transport, sound modes, inputs, BT pairing, presets), lock screen circular, rectangular and inline. All buttons work without opening the app.
 - **Control Center** (iOS 18): Sound bar power and Mute toggles, Volume up / down buttons, and a Preset button. They also work on the lock screen corner buttons and the Action button.
 - **Siri** with no setup: "sound bar off in Subwave", "Subwave louder", "mute Subwave", "Subwave Late night", "switch Subwave to Bluetooth", "bedtime in Subwave" (bar off unless the TV is on).
