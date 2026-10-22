@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.4",
+          "buildVersion": "4",
+          "date": "2026-10-22T17:42:50Z",
+          "localizedDescription": "- Fix IR blaster search: prove the key on quiet 3.3 blasters, hear Tuya broadcasts, show what each device said (59f3f40)",
+          "downloadURL": "https://github.com/soum91/subwave/releases/download/build-4/Subwave-1.0.0-build-4.ipa",
+          "size": 1592162,
+          "minOSVersion": "18.0"
+        },
+        {
           "version": "1.0.0.3",
           "buildVersion": "3",
           "date": "2026-10-21T04:18:04Z",
@@ -29,11 +38,11 @@
           "minOSVersion": "18.0"
         }
       ],
-      "version": "1.0.0.3",
-      "versionDate": "2026-10-21T04:18:04Z",
-      "versionDescription": "- Fix intent dialog type (7272016)\n- Remote as its own tab with every button, D-pad and height keys (3c89a3a)\n- Subwave: Vizio sound bar app over SmartCast with Tuya IR fallback (4e08e68)",
-      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-3/Subwave-1.0.0-build-3.ipa",
-      "size": 1564007,
+      "version": "1.0.0.4",
+      "versionDate": "2026-10-22T17:42:50Z",
+      "versionDescription": "- Fix IR blaster search: prove the key on quiet 3.3 blasters, hear Tuya broadcasts, show what each device said (59f3f40)",
+      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-4/Subwave-1.0.0-build-4.ipa",
+      "size": 1592162,
       "appPermissions": {}
     }
   ],
