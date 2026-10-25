@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.7",
+          "buildVersion": "7",
+          "date": "2026-10-25T13:25:49Z",
+          "localizedDescription": "- Add configurable soundbar controls and favourite Lock Screen buttons (260f763)",
+          "downloadURL": "https://github.com/soum91/subwave/releases/download/build-7/Subwave-1.0.0-build-7.ipa",
+          "size": 1629794,
+          "minOSVersion": "18.0"
+        },
+        {
           "version": "1.0.0.6",
           "buildVersion": "6",
           "date": "2026-10-22T17:59:55Z",
@@ -56,11 +65,11 @@
           "minOSVersion": "18.0"
         }
       ],
-      "version": "1.0.0.6",
-      "versionDate": "2026-10-22T17:59:55Z",
-      "versionDescription": "- iPhone volume buttons control the sound bar while Subwave is open (0794e37)\n- Sound buttons use the bar's real choices (keeps Dual surround) (b83f806)",
-      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-6/Subwave-1.0.0-build-6.ipa",
-      "size": 1611720,
+      "version": "1.0.0.7",
+      "versionDate": "2026-10-25T13:25:49Z",
+      "versionDescription": "- Add configurable soundbar controls and favourite Lock Screen buttons (260f763)",
+      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-7/Subwave-1.0.0-build-7.ipa",
+      "size": 1629794,
       "appPermissions": {}
     }
   ],
