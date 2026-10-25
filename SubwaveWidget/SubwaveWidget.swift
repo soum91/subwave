@@ -5,6 +5,9 @@ import AppIntents
 @main
 struct SubwaveWidgets: WidgetBundle {
     var body: some Widget {
+        FavouriteBarButtonWidget()
+        BarRemoteControl()
+
         BarWidget()
         BarPowerControl()
         BarMuteControl()
