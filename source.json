@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.10",
+          "buildVersion": "10",
+          "date": "2026-10-27T01:47:53Z",
+          "localizedDescription": "- Add a read-only Lock Screen status widget (86e8221)",
+          "downloadURL": "https://github.com/soum91/subwave/releases/download/build-10/Subwave-1.0.0-build-10.ipa",
+          "size": 1645569,
+          "minOSVersion": "18.0"
+        },
+        {
           "version": "1.0.0.9",
           "buildVersion": "9",
           "date": "2026-10-27T01:41:30Z",
@@ -83,11 +92,11 @@
           "minOSVersion": "18.0"
         }
       ],
-      "version": "1.0.0.9",
-      "versionDate": "2026-10-27T01:41:30Z",
-      "versionDescription": "- Run Shortcuts actions in the app instead of the widget extension (1afa54c)",
-      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-9/Subwave-1.0.0-build-9.ipa",
-      "size": 1633940,
+      "version": "1.0.0.10",
+      "versionDate": "2026-10-27T01:47:53Z",
+      "versionDescription": "- Add a read-only Lock Screen status widget (86e8221)",
+      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-10/Subwave-1.0.0-build-10.ipa",
+      "size": 1645569,
       "appPermissions": {}
     }
   ],
