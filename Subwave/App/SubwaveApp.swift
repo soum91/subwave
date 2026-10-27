@@ -63,8 +63,8 @@ struct SubwaveShortcuts: AppShortcutsProvider {
 
     static var appShortcuts: [AppShortcut] {
         AppShortcut(intent: ToggleSoundBarIntent(), phrases: [
-            "Toggle sound bar power in \\(.applicationName)",
-            "Switch my sound bar with \\(.applicationName)",
+            "Toggle sound bar power in \(.applicationName)",
+            "Switch my sound bar with \(.applicationName)",
         ], shortTitle: "Sound Bar Switch", systemImageName: "hifispeaker.fill")
         AppShortcut(intent: SoundBarOffIntent(), phrases: [
             "Sound bar off in \(.applicationName)",
