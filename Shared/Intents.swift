@@ -97,6 +97,11 @@ enum InputCache {
 private func reload() { WidgetCenter.shared.reloadAllTimelines() }
 
 struct SoundBarPowerIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Set Sound Bar Power"
     static var description = IntentDescription("Turns the Vizio sound bar on or off, over Wi-Fi or through the IR blaster.")
 
@@ -117,6 +122,11 @@ struct SoundBarPowerIntent: AppIntent {
 }
 
 struct SoundBarOffIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Turn Sound Bar Off"
     static var description = IntentDescription("Turns the Vizio sound bar off.")
     func perform() async throws -> some IntentResult & ProvidesDialog {
@@ -128,6 +138,11 @@ struct SoundBarOffIntent: AppIntent {
 }
 
 struct SoundBarOnIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Turn Sound Bar On"
     static var description = IntentDescription("Turns the Vizio sound bar on.")
     func perform() async throws -> some IntentResult & ProvidesDialog {
@@ -138,6 +153,11 @@ struct SoundBarOnIntent: AppIntent {
 }
 
 struct ToggleSoundBarIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Toggle Sound Bar Power"
     static var description = IntentDescription("Turns the sound bar on if it's off, off if it's on.")
     func perform() async throws -> some IntentResult {
@@ -148,6 +168,11 @@ struct ToggleSoundBarIntent: AppIntent {
 }
 
 struct VolumeUpIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Sound Bar Volume Up"
     static var description = IntentDescription("Turns the sound bar up by a few steps.")
 
@@ -167,6 +192,11 @@ struct VolumeUpIntent: AppIntent {
 }
 
 struct VolumeDownIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Sound Bar Volume Down"
     static var description = IntentDescription("Turns the sound bar down by a few steps.")
 
@@ -186,6 +216,11 @@ struct VolumeDownIntent: AppIntent {
 }
 
 struct SetVolumeIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Set Sound Bar Volume"
     static var description = IntentDescription("Sets the sound bar to an exact volume (needs the bar on Wi-Fi).")
 
@@ -202,6 +237,11 @@ struct SetVolumeIntent: AppIntent {
 }
 
 struct MuteIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Mute Sound Bar"
     static var description = IntentDescription("Mutes or unmutes the sound bar.")
     func perform() async throws -> some IntentResult {
@@ -212,6 +252,11 @@ struct MuteIntent: AppIntent {
 }
 
 struct SetInputIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Set Sound Bar Input"
     static var description = IntentDescription("Switches the sound bar to an input (TV, Bluetooth, optical…).")
 
@@ -231,6 +276,11 @@ struct SetInputIntent: AppIntent {
 }
 
 struct RunPresetIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Run Sound Bar Preset"
     static var description = IntentDescription("Runs one of your Subwave presets.")
 
@@ -254,6 +304,11 @@ struct RunPresetIntent: AppIntent {
 }
 
 struct PressButtonIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Press Sound Bar Button"
     static var description = IntentDescription("Presses any button from the sound bar's remote: sound modes, night mode, bass, Bluetooth pairing and more.")
 
@@ -273,6 +328,11 @@ struct PressButtonIntent: AppIntent {
 }
 
 struct PlayPauseIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Sound Bar Play/Pause"
     static var description = IntentDescription("Plays or pauses whatever's playing on the sound bar (Bluetooth, USB, Cast).")
     func perform() async throws -> some IntentResult {
@@ -282,6 +342,11 @@ struct PlayPauseIntent: AppIntent {
 }
 
 struct NextTrackIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Sound Bar Next Track"
     static var description = IntentDescription("Skips to the next track (IR).")
     func perform() async throws -> some IntentResult {
@@ -291,6 +356,11 @@ struct NextTrackIntent: AppIntent {
 }
 
 struct GetSoundBarPowerIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Is the Sound Bar On"
     static var description = IntentDescription("Asks the sound bar over Wi-Fi whether it's on. Returns true or false.")
 
@@ -304,6 +374,11 @@ struct GetSoundBarPowerIntent: AppIntent {
 
 /// For Shortcuts automations (time of day, Sleep focus, leaving home): only acts if the TV is off.
 struct SoundBarOffIfTVOffIntent: AppIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Sound Bar Off If TV Is Off"
     static var description = IntentDescription("Turns the sound bar off, unless the Sony TV is on.")
 
