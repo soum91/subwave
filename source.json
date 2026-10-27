@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.12",
+          "buildVersion": "12",
+          "date": "2026-10-27T04:47:41Z",
+          "localizedDescription": "- Fix App Shortcut utterances for Siri and Control Center (b7ba7aa)",
+          "downloadURL": "https://github.com/soum91/subwave/releases/download/build-12/Subwave-1.0.0-build-12.ipa",
+          "size": 1647745,
+          "minOSVersion": "18.0"
+        },
+        {
           "version": "1.0.0.11",
           "buildVersion": "11",
           "date": "2026-10-27T04:42:25Z",
@@ -101,11 +110,11 @@
           "minOSVersion": "18.0"
         }
       ],
-      "version": "1.0.0.11",
-      "versionDate": "2026-10-27T04:42:25Z",
-      "versionDescription": "- Expose one-tap soundbar power Shortcut for Control Center (e70aec4)",
-      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-11/Subwave-1.0.0-build-11.ipa",
-      "size": 1638051,
+      "version": "1.0.0.12",
+      "versionDate": "2026-10-27T04:47:41Z",
+      "versionDescription": "- Fix App Shortcut utterances for Siri and Control Center (b7ba7aa)",
+      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-12/Subwave-1.0.0-build-12.ipa",
+      "size": 1647745,
       "appPermissions": {}
     }
   ],
