@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.13",
+          "buildVersion": "13",
+          "date": "2026-10-28T04:04:59Z",
+          "localizedDescription": "- Call the bridge Keystone Bridge and point to the Keystone app (4001de5)",
+          "downloadURL": "https://github.com/soum91/subwave/releases/download/build-13/Subwave-1.0.0-build-13.ipa",
+          "size": 1646040,
+          "minOSVersion": "18.0"
+        },
+        {
           "version": "1.0.0.12",
           "buildVersion": "12",
           "date": "2026-10-27T04:47:41Z",
@@ -110,11 +119,11 @@
           "minOSVersion": "18.0"
         }
       ],
-      "version": "1.0.0.12",
-      "versionDate": "2026-10-27T04:47:41Z",
-      "versionDescription": "- Fix App Shortcut utterances for Siri and Control Center (b7ba7aa)",
-      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-12/Subwave-1.0.0-build-12.ipa",
-      "size": 1647745,
+      "version": "1.0.0.13",
+      "versionDate": "2026-10-28T04:04:59Z",
+      "versionDescription": "- Call the bridge Keystone Bridge and point to the Keystone app (4001de5)",
+      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-13/Subwave-1.0.0-build-13.ipa",
+      "size": 1646040,
       "appPermissions": {}
     }
   ],
