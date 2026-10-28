@@ -48,7 +48,7 @@ struct BridgeView: View {
     private var pairSection: some View {
         Group {
             Section {
-                Text("iPhones can't run automations in the background and you have no Home hub, so this runs on the Afterglow bridge (the ESP32 that already turns the lights off with the TV). It watches the Sony TV every 4 s and switches the bar off over Wi-Fi, or with the IR blaster if the bar isn't on Wi-Fi. It also puts a **Sound Bar** switch in Apple Home.")
+                Text("iPhones can't run automations in the background and you have no Home hub, so this runs on the Keystone Bridge (the ESP32 that already turns the lights off with the TV). It watches the Sony TV every 4 s and switches the bar off over Wi-Fi, or with the IR blaster if the bar isn't on Wi-Fi. It also puts a **Sound Bar** switch in Apple Home.")
                     .font(.callout)
             }
             Section {
@@ -77,9 +77,9 @@ struct BridgeView: View {
                 }
                 if let message { Text(message).font(.callout).foregroundStyle(Theme.danger) }
             } header: {
-                HStack { Text("Afterglow bridge"); Spacer(); Button("Search again") { finder.start() }.font(.caption) }
+                HStack { Text("Keystone Bridge"); Spacer(); Button("Search again") { finder.start() }.font(.caption) }
             } footer: {
-                Text("Needs bridge firmware 1.1 or newer (Afterglow releases › firmware-latest, flash the -app.bin to keep your Home pairing). Subwave pairs separately from Afterglow; both can use the same bridge.")
+                Text("Needs bridge firmware 1.1 or newer (update it from the Keystone app). Subwave pairs separately from Afterglow; both can use the same bridge.")
             }
         }
     }

@@ -68,14 +68,14 @@ enum BridgeAPI {
         req.timeoutInterval = 4
         let (data, _) = try await URLSession.shared.data(for: req)
         let info = try JSONDecoder().decode(BridgeInfo.self, from: data)
-        guard info.app == "afterglow-bridge" else { throw BarError("That isn't an Afterglow bridge.") }
+        guard info.app == "afterglow-bridge" else { throw BarError("That isn't a Keystone Bridge.") }
         guard info.bar != nil else {
-            throw BarError("This bridge's firmware is too old for the sound bar. Flash the latest Afterglow Bridge firmware (the -app.bin keeps your Home pairing).")
+            throw BarError("This bridge's firmware is too old for the sound bar. Update it from the Keystone app (Bridge › Firmware).")
         }
         return info
     }
 
-    /// Subwave gets its own token, separate from Afterglow's. Reset with @B on the serial console.
+    /// Subwave gets its own token, separate from Afterglow's. Reset from Keystone › Bridge › Pairings.
     static func claim(_ cfg: BridgeConfig) async throws -> String {
         guard let u = url(cfg, "/api/bar/claim") else { throw BarError("Bad bridge address.") }
         var req = URLRequest(url: u)

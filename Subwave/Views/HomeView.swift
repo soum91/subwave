@@ -337,7 +337,7 @@ struct HomeView: View {
             .disabled(!store.bar.hasWiFi)
             Divider().overlay(Theme.stroke)
             NavigationLink { BridgeView() } label: {
-                row("Follow the TV", "tv.and.hifispeaker.fill", store.bridge.isPaired ? "Runs on your Afterglow bridge" : "Bar off when the TV goes off")
+                row("Follow the TV", "tv.and.hifispeaker.fill", store.bridge.isPaired ? "Runs on your Keystone Bridge" : "Bar off when the TV goes off")
             }
         }
         .foregroundStyle(.white)
