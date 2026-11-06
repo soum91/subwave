@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.14",
+          "buildVersion": "14",
+          "date": "2026-11-06T20:45:26Z",
+          "localizedDescription": "- Enforce visible installed version/build across app releases (61b9af1)",
+          "downloadURL": "https://github.com/soum91/subwave/releases/download/build-14/Subwave-1.0.0-build-14.ipa",
+          "size": 1645869,
+          "minOSVersion": "18.0"
+        },
+        {
           "version": "1.0.0.13",
           "buildVersion": "13",
           "date": "2026-10-28T04:04:59Z",
@@ -119,11 +128,11 @@
           "minOSVersion": "18.0"
         }
       ],
-      "version": "1.0.0.13",
-      "versionDate": "2026-10-28T04:04:59Z",
-      "versionDescription": "- Call the bridge Keystone Bridge and point to the Keystone app (4001de5)",
-      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-13/Subwave-1.0.0-build-13.ipa",
-      "size": 1646040,
+      "version": "1.0.0.14",
+      "versionDate": "2026-11-06T20:45:26Z",
+      "versionDescription": "- Enforce visible installed version/build across app releases (61b9af1)",
+      "downloadURL": "https://github.com/soum91/subwave/releases/download/build-14/Subwave-1.0.0-build-14.ipa",
+      "size": 1645869,
       "appPermissions": {}
     }
   ],
