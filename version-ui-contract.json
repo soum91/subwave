@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "targets": [
+    {
+      "name": "iOS app",
+      "evidence": [
+        {
+          "path": "Subwave/Views/SettingsView.swift",
+          "contains": [
+            "LabeledContent(\"Version\"",
+            "AppGroup.version",
+            "CFBundleVersion"
+          ]
+        },
+        {
+          "path": "Shared/AppGroup.swift",
+          "contains": [
+            "CFBundleShortVersionString"
+          ]
+        }
+      ]
+    }
+  ]
+}
